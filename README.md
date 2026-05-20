@@ -2,7 +2,7 @@
   <img src="src/main/resources/icons/logo.png" alt="EncSeal" width="96"/>
 </p>
 
-<h1 align="center">EncSeal</h1>
+<h1 align="center">Javafx Crypt Tool</h1>
 
 <p align="center">
   A desktop utility for encrypting and decrypting text using strong password-based encryption.<br/>
