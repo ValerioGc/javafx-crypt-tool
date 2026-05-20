@@ -1,0 +1,252 @@
+
+@import url('style/buttons.css');
+@import url('style/text.css');
+@import url('style/select.css');
+
+/* ===== Root & fonts ===== */
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "Arial";
+    -fx-font-size: 14px;
+}
+
+/* Transparent so the card's rounded corners show against the desktop */
+.app_root {
+    -fx-background-color: transparent;
+    -fx-padding: 18px;
+}
+
+/* ===== Scroll pane ===== */
+.content_scroll,
+.content_scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.content_scroll {
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+
+.content_scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10px;
+    -fx-padding: 6px 2px 6px 0;
+}
+
+.content_scroll .scroll-bar:vertical .track,
+.content_scroll .scroll-bar:vertical .increment-button,
+.content_scroll .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.content_scroll .scroll-bar:vertical .increment-arrow,
+.content_scroll .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.content_scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 999px;
+    -fx-background-insets: 2px;
+}
+
+.content_scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
+}
+
+/* ===== Card: content_panel = blue header background + rounded corners ===== */
+.content_panel {
+    -fx-background-color: #1a88f5;
+    -fx-background-radius: 20px;
+    -fx-border-color: rgba(0, 0, 0, 0.08);
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.14), 28, 0.16, 0, 10);
+}
+
+/* ===== Header (blue area — lays on top of content_panel blue bg) ===== */
+.page_header {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px 20px 0 0;
+}
+
+/* Top bar: drag handle + window control buttons */
+.window_titlebar {
+    -fx-background-color: transparent;
+}
+
+.brand_logo {
+    -fx-opacity: 0.95;
+}
+
+.header_title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 800;
+    -fx-text-fill: white;
+}
+
+.header_description {
+    -fx-font-size: 13px;
+    -fx-font-weight: 400;
+    -fx-text-fill: rgba(255, 255, 255, 0.82);
+}
+
+/* Language / theme buttons styled for blue header */
+.page_header .selector_button {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+}
+
+.page_header .selector_button:hover,
+.page_header .selector_button:showing {
+    -fx-background-color: rgba(255, 255, 255, 0.28);
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+}
+
+.page_header .selector_button .arrow {
+    -fx-background-color: white;
+}
+
+.page_header .icon_button {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+}
+
+.page_header .icon_button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.28);
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+}
+
+.page_header .icon_button:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.38);
+}
+
+/* ===== Body (white/light area below header) ===== */
+.content_body {
+    -fx-background-color: #f5f7fb;
+    -fx-background-radius: 0 0 20px 20px;
+}
+
+/* ===== Mode toggle buttons ===== */
+.mode_toggle_container {
+    -fx-background-color: #e4e8f0;
+    -fx-background-radius: 10px;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 10px;
+    -fx-max-width: Infinity;
+}
+
+.mode_toggle_btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4b5563;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-pref-height: 46px;
+    -fx-padding: 10px 20px;
+}
+
+.mode_toggle_btn:hover {
+    -fx-background-color: #dde1ea;
+}
+
+.mode_toggle_btn_active {
+    -fx-background-color: #1a88f5;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(26, 136, 245, 0.35), 10, 0.2, 0, 3);
+}
+
+.mode_toggle_btn_active:hover {
+    -fx-background-color: #1578e0;
+}
+
+/* ===== Footer ===== */
+.app_footer {
+    -fx-padding: 10px 24px 14px 24px;
+    -fx-min-height: 42px;
+}
+
+.footer_text {
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #6b7280;
+}
+
+.footer_link {
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #2563eb;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+.footer_link:hover {
+    -fx-text-fill: #1d4ed8;
+    -fx-underline: true;
+}
+
+/* ===================================================
+   DARK THEME
+   =================================================== */
+.theme_dark {
+    -fx-background-color: transparent;
+}
+
+.theme_dark .footer_text {
+    -fx-text-fill: #a3a3a3;
+}
+
+.theme_dark .footer_link {
+    -fx-text-fill: #93c5fd;
+}
+
+.theme_dark .footer_link:hover {
+    -fx-text-fill: #bfdbfe;
+}
+
+/* Card: same blue header, dark body */
+.theme_dark .content_panel {
+    -fx-border-color: rgba(60, 60, 67, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 28, 0.18, 0, 10);
+}
+
+.theme_dark .content_body {
+    -fx-background-color: #1c1c1e;
+}
+
+/* Dark scrollbar */
+.theme_dark .content_scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #52525b;
+}
+
+.theme_dark .content_scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #71717a;
+}
+
+/* Dark mode toggle */
+.theme_dark .mode_toggle_container {
+    -fx-background-color: #2d2d32;
+    -fx-border-color: #3f3f46;
+}
+
+.theme_dark .mode_toggle_btn {
+    -fx-text-fill: #d1d5db;
+}
+
+.theme_dark .mode_toggle_btn:hover {
+    -fx-background-color: #38383e;
+}
+
+.theme_dark .mode_toggle_btn_active {
+    -fx-background-color: #1a88f5;
+    -fx-text-fill: white;
+}
+
+.theme_dark .mode_toggle_btn_active:hover {
+    -fx-background-color: #1578e0;
+}
