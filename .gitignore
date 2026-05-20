@@ -1,0 +1,15 @@
+/.metadata/
+target
+.classpath
+.factorypath
+.settings
+.project
+log
+log/*
+
+.sonarlint/
+.vscode/
+
+.env
+.idea/
+*.log
