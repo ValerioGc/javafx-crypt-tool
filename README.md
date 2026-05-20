@@ -9,6 +9,14 @@
   Runs on Windows and Linux with no installation required.
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white" alt="Java 21"/>
+  <img src="https://img.shields.io/badge/JavaFX-21.0.2-blue?logo=java&logoColor=white" alt="JavaFX"/>
+  <img src="https://img.shields.io/badge/Bouncy_Castle-1.84-green" alt="Bouncy Castle"/>
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey" alt="Platform"/>
+  <img src="https://img.shields.io/badge/license-Unlicense-blue" alt="License"/>
+</p>
+
 ---
 
 <p align="center">
@@ -17,45 +25,45 @@
 
 ---
 
-## Download
+## ⬇️ Download
 
 Download the latest release from the [Releases page](https://github.com/ValerioGc/java-crypt-tool/releases):
 
-- **Windows** → `javafx-crypt-tool-windows.zip` — extract and run `javafx-crypt-tool.exe`
-- **Linux** → `javafx-crypt-tool-linux.tar.gz` — extract and run `javafx-crypt-tool`
+| Platform | File | How to run |
+|---|---|---|
+| 🪟 Windows | `javafx-crypt-tool-windows.zip` | Extract → run `javafx-crypt-tool.exe` |
+| 🐧 Linux | `javafx-crypt-tool-linux.tar.gz` | Extract → run `javafx-crypt-tool` |
 
-No Java installation required. The runtime is bundled inside the package.
+> No Java installation required — the runtime is bundled inside the package.
 
 ---
 
-## How To Use
+## 🚀 How To Use
 
 1. Select an **encryption algorithm** from the dropdown
 2. Enter a **salting key** — a secret string used as part of the key derivation
 3. Enter the **text** to encrypt or decrypt
 4. Select **Encrypt** or **Decrypt** mode
 5. Click **Run**
-6. Use the copy button to copy the result
+6. Use the 📋 copy button to copy the result
 
-> The same salting key and algorithm used to encrypt must be used to decrypt.
+> ⚠️ The same salting key and algorithm used to encrypt must be used to decrypt.
 
-### Jasypt compatibility mode
+### 🔄 Jasypt compatibility mode
 
 Enable the **Jasypt mode** checkbox to decrypt (or encrypt) text produced by Jasypt's `StandardPBEStringEncryptor`. Select the algorithm and iterations count that match your Jasypt configuration.
 
 ---
 
-## Supported Algorithms
+## 🔐 Supported Algorithms
 
 ### EncSeal native
 
-| Label | Key size |
-|---|---|
-| SHA256 + AES (128-bit) | 128 bit |
-| SHA256 + AES (192-bit) | 192 bit |
-| SHA256 + AES (256-bit) | 256 bit |
-
-Uses 600,000 KDF iterations for strong key derivation.
+| Algorithm | Key size | Iterations |
+|---|---|---|
+| SHA256 + AES (128-bit) | 128 bit | 600,000 |
+| SHA256 + AES (192-bit) | 192 bit | 600,000 |
+| SHA256 + AES (256-bit) | 256 bit | 600,000 |
 
 ### Jasypt compatibility mode
 
@@ -63,21 +71,23 @@ Exposes additional algorithms for interoperability with Jasypt `StandardPBEStrin
 
 ---
 
-## Supported Languages
+## 🌐 Supported Languages
 
-English, Italian, French, Spanish, German — switchable from the header.
+🇬🇧 English &nbsp;·&nbsp; 🇮🇹 Italian &nbsp;·&nbsp; 🇫🇷 French &nbsp;·&nbsp; 🇪🇸 Spanish &nbsp;·&nbsp; 🇩🇪 German
 
----
-
-## Coming Soon
-
-- File encryption and decryption (any format)
-- OS context menu integration (right-click on any file)
-- Windows installer
+Switchable at runtime from the header — no restart required.
 
 ---
 
-## Source
+## 🗺️ Coming Soon
+
+- 📁 File encryption and decryption (any format)
+- 🖱️ OS context menu integration (right-click on any file)
+- 📦 Windows installer
+
+---
+
+## 🔗 Source
 
 [https://github.com/ValerioGc/java-crypt-tool](https://github.com/ValerioGc/java-crypt-tool)
 
