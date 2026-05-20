@@ -9,13 +9,9 @@ import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 import java.util.stream.Collectors;
 
-import javax.crypto.Cipher;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import app.config.security.AlgorithmRegistry;
 import app.config.security.CryptoConfig;
-import app.config.security.PBEEncryptor;
 import app.exception.StartApplicationException;
 import app.gui.EncryptPasswordGUI;
 
@@ -31,7 +27,7 @@ import app.gui.EncryptPasswordGUI;
  * @version 1.0.0
  * @since 1.0.0
  * @see app.config.AppSettings AppSettings
- * @see <a href="https://github.com/ValerioGc/java-crypt-tool">GitHub Repository</a>
+ * @see <a href="https://github.com/ValerioGc/javafx-crypt-tool">GitHub Repository</a>
 */
 public class MainLauncher {
 
@@ -52,38 +48,8 @@ public class MainLauncher {
 
         Security.setProperty("crypto.policy", "unlimited");
         CryptoConfig.ensureProviderRegistered();
-        initSecurity();
     }
 
-	 
-    /**
-     * Initializes the <b>security configuration</b> by:
-     * <ul>
-     *   <li>Logging the current cryptography policy's AES key length.</li>
-     *   <li>Testing and logging each algorithm defined in {@link AlgorithmRegistry#ALGORITHMS}.</li>
-     *   <li>Listing all available security providers.</li>
-     * </ul>
-     *
-     * @throws NoSuchAlgorithmException if a requested cryptographic algorithm is not available
-     */
-	private static void initSecurity() throws NoSuchAlgorithmException {
-
-		logger.info("Policy di crittografia attuale: {}", Cipher.getMaxAllowedKeyLength("AES"));
-        logger.info("##### Algoritmi supportati #####");
-        for (String algo : AlgorithmRegistry.ALGORITHMS.values()) {
-            if (PBEEncryptor.isSupported(algo))
-                logger.info("Supported: {}", algo);
-            else
-                logger.info("NOT Supported: {}", algo);
-        }
-        
-        // ##################### Security Provider ##########################
-        logger.info("Elenco provider sicurezza disponibili:");
-        for (var provider : Security.getProviders())       	
-            logger.info("{}", provider.getName());
-        
-	}
-    
     /**
      * Print the application logo in console and logger on start
     */
