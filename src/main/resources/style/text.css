@@ -52,14 +52,14 @@
     -fx-background-color: transparent;
     -fx-effect: none;
     -fx-pref-width: 100%;
+    -fx-text-fill: #111827;
+    -fx-prompt-text-fill: #9ca3af;
 }
 
 .text_area .content {
     -fx-background-color: #ffffff;
     -fx-background-radius: 7px;
     -fx-padding: 8px 12px;
-    -fx-text-fill: #111827;
-    -fx-prompt-text-fill: #9ca3af;
 }
 
 .text_area:hover {
@@ -73,12 +73,12 @@
 
 .theme_dark .text_area {
     -fx-border-color: #4b5563;
+    -fx-text-fill: #f5f5f5;
+    -fx-prompt-text-fill: #a3a3a3;
 }
 
 .theme_dark .text_area .content {
     -fx-background-color: #333333;
-    -fx-text-fill: #f5f5f5;
-    -fx-prompt-text-fill: #a3a3a3;
 }
 
 .result_field {
@@ -88,13 +88,13 @@
     -fx-border-radius: 8px;
     -fx-background-radius: 8px;
     -fx-pref-width: 100%;
+    -fx-text-fill: #111827;
 }
 
 .result_field .content {
     -fx-background-color: #f8fafc;
     -fx-background-radius: 7px;
     -fx-padding: 10px 42px 10px 12px;
-    -fx-text-fill: #111827;
 }
 
 .result_field:focused {
@@ -152,11 +152,11 @@
 .theme_dark .result_field {
     -fx-background-color: #333333;
     -fx-border-color: #4b5563;
+    -fx-text-fill: #f5f5f5;
 }
 
 .theme_dark .result_field .content {
     -fx-background-color: #333333;
-    -fx-text-fill: #f5f5f5;
 }
 
 /* ── Password strength bar ── */
