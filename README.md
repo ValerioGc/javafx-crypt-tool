@@ -81,6 +81,6 @@ Switchable at runtime from the header — no restart required.
 
 ## 🔗 Source
 
-[https://github.com/ValerioGc/java-crypt-tool](https://github.com/ValerioGc/java-crypt-tool)
+[https://github.com/ValerioGc/javafx-crypt-tool](https://github.com/ValerioGc/javafx-crypt-tool)
 
 For build and development instructions see [DEVELOPMENT.md](DEVELOPMENT.md).
