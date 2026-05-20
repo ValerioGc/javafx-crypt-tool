@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <RollingFile 
+        name="MainFile" 
+        fileName="log/app.log" 
+        filePattern="log/app-%d{yyyy-MM-dd}.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1}.%M | %msg%n"/>
+      <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+    </RollingFile>
+
+    <RollingFile 
+        name="SecurityFile" 
+        fileName="log/security.log" 
+        filePattern="log/security-%d{yyyy-MM-dd}.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1}.%M | %msg%n"/>
+      <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+    </RollingFile>
+
+    <RollingFile 
+        name="GuiFile" 
+        fileName="log/gui.log" 
+        filePattern="log/gui-%d{yyyy-MM-dd}.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1}.%M | %msg%n"/>
+      <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+    </RollingFile>
+
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1}.%M | %msg%n"/>
+    </Console>
+  </Appenders>
+
+  <Loggers>
+    <!-- Logger security -->
+    <Logger name="app.config.security" level="info" additivity="false">
+      <AppenderRef ref="SecurityFile"/>
+      <AppenderRef ref="Console"/>
+    </Logger>
+
+    <!-- Logger gui -->
+    <Logger name="app.gui" level="info" additivity="false">
+      <AppenderRef ref="GuiFile"/>
+      <AppenderRef ref="Console"/>
+    </Logger>
+
+    <!-- Logger app -->
+    <Logger name="app" level="info" additivity="false">
+      <AppenderRef ref="MainFile"/>
+      <AppenderRef ref="Console"/>
+    </Logger>
+
+    <!-- Root logger -->
+    <Root level="info">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
