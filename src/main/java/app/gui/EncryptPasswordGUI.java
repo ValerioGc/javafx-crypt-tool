@@ -1,7 +1,5 @@
 package app.gui;
 
-import java.io.InputStream;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,15 +33,14 @@ public class EncryptPasswordGUI extends Application {
 
         Scene mainPage = MainSceneBuilder.createScene(primaryStage);
 
-        try (InputStream iconStream = getClass().getResourceAsStream(AppAssets.APP_ICON)) {
-            if (iconStream != null) {
-                Image appIcon = new Image(iconStream);
-                primaryStage.getIcons().add(appIcon);
-            } else {
-                logger.error(AppMessages::errorLogo);
+        java.net.URL iconUrl = getClass().getResource(AppAssets.APP_ICON);
+        if (iconUrl != null) {
+            String iconUrlStr = iconUrl.toExternalForm();
+            for (int size : new int[]{16, 32, 48, 64, 128, 256}) {
+                primaryStage.getIcons().add(new Image(iconUrlStr, size, size, true, true));
             }
-        } catch (java.io.IOException e) {
-            logger.error("Unable to close application icon resource", e);
+        } else {
+            logger.error(AppMessages::errorLogo);
         }
 
         primaryStage.setScene(mainPage);
