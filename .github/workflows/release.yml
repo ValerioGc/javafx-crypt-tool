@@ -1,0 +1,92 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-windows:
+    name: Build Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Liberica Full JDK 21 (includes JavaFX)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: liberica
+          java-package: jdk+fx
+          cache: maven
+
+      - name: Build Windows package
+        run: scripts\package-windows.cmd --skip-tests
+
+      - name: Compress artifact
+        run: Compress-Archive -Path target\dist\javafx-crypt-tool-windows -DestinationPath target\dist\javafx-crypt-tool-windows.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: javafx-crypt-tool-windows
+          path: target/dist/javafx-crypt-tool-windows.zip
+
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Liberica Full JDK 21 (includes JavaFX)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: liberica
+          java-package: jdk+fx
+          cache: maven
+
+      - name: Build Linux package
+        run: sh scripts/package-linux.sh --skip-tests
+
+      - name: Compress artifact
+        run: tar -C target/dist -czf target/dist/javafx-crypt-tool-linux.tar.gz javafx-crypt-tool-linux
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: javafx-crypt-tool-linux
+          path: target/dist/javafx-crypt-tool-linux.tar.gz
+
+  release:
+    name: Publish GitHub Release
+    needs: [build-windows, build-linux]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: javafx-crypt-tool-windows
+          path: dist
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: javafx-crypt-tool-linux
+          path: dist
+
+      - name: Extract release notes from CHANGELOG.md
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          awk "/^## \[$VERSION\]/{found=1; next} found && /^## \[/{exit} found" CHANGELOG.md > release_notes.md
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            dist/javafx-crypt-tool-windows.zip \
+            dist/javafx-crypt-tool-linux.tar.gz \
+            --repo "${{ github.repository }}" \
+            --title "javafx-crypt-tool ${{ github.ref_name }}" \
+            --notes-file release_notes.md
