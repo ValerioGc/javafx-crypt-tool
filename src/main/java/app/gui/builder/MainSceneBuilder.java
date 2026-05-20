@@ -147,6 +147,7 @@ public class MainSceneBuilder {
 
         ScrollPane scrollPane = new ScrollPane(body);
         scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.getStyleClass().add("content_scroll");
