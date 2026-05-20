@@ -79,14 +79,6 @@ Switchable at runtime from the header — no restart required.
 
 ---
 
-## 🗺️ Coming Soon
-
-- 📁 File encryption and decryption (any format)
-- 🖱️ OS context menu integration (right-click on any file)
-- 📦 Windows installer
-
----
-
 ## 🔗 Source
 
 [https://github.com/ValerioGc/java-crypt-tool](https://github.com/ValerioGc/java-crypt-tool)
