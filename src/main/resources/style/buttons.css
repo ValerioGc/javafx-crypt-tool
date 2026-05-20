@@ -1,0 +1,200 @@
+/* ===== Run button (outlined) ===== */
+.btn_run {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1f2937;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-padding: 8px 18px;
+    -fx-cursor: hand;
+    -fx-min-height: 42px;
+    -fx-min-width: 90px;
+}
+
+.btn_run:hover {
+    -fx-border-color: #93c5fd;
+    -fx-background-color: #eef2ff;
+}
+
+.btn_run:pressed {
+    -fx-background-color: #dbeafe;
+}
+
+.btn_run:disabled {
+    -fx-opacity: 0.45;
+    -fx-cursor: default;
+}
+
+/* ===== Selector button (language dropdown) ===== */
+.selector_button {
+    -fx-background-color: #f7f7f7;
+    -fx-text-fill: #111827;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-padding: 7px 10px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #d1d5db;
+    -fx-min-width: 56px;
+    -fx-min-height: 38px;
+}
+
+.selector_button:hover,
+.selector_button:showing {
+    -fx-background-color: #eef2ff;
+    -fx-border-color: #93c5fd;
+}
+
+.selector_button .arrow {
+    -fx-background-color: #4b5563;
+}
+
+/* ===== Icon button (copy, theme) ===== */
+.icon_button {
+    -fx-background-color: #f7f7f7;
+    -fx-text-fill: #111827;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-padding: 0;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #d1d5db;
+    -fx-min-width: 38px;
+    -fx-pref-width: 38px;
+    -fx-min-height: 38px;
+    -fx-pref-height: 38px;
+}
+
+.icon_button:hover {
+    -fx-background-color: #eef2ff;
+    -fx-border-color: #93c5fd;
+}
+
+.icon_button:pressed {
+    -fx-background-color: #dbeafe;
+}
+
+/* ===== Context menu & tooltip ===== */
+.context-menu {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8px;
+    -fx-padding: 6px;
+}
+
+.menu-item {
+    -fx-background-radius: 6px;
+    -fx-padding: 7px 12px;
+}
+
+.menu-item:focused {
+    -fx-background-color: #eef2ff;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: #111827;
+}
+
+/* ===== Window control buttons (minimize / close) ===== */
+.window_btn {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-padding: 0;
+    -fx-min-width: 30px;
+    -fx-pref-width: 30px;
+    -fx-min-height: 30px;
+    -fx-pref-height: 30px;
+    -fx-cursor: hand;
+}
+
+.window_btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.30);
+}
+
+.window_btn:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.45);
+}
+
+.window_btn_close:hover {
+    -fx-background-color: #e74c3c;
+}
+
+.window_btn_close:pressed {
+    -fx-background-color: #c0392b;
+}
+
+.tooltip {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* ===================================================
+   DARK THEME
+   =================================================== */
+.theme_dark .btn_run {
+    -fx-text-fill: #f5f5f5;
+    -fx-border-color: #4b5563;
+}
+
+.theme_dark .btn_run:hover {
+    -fx-border-color: #60a5fa;
+    -fx-background-color: #27272a;
+}
+
+.theme_dark .btn_run:pressed {
+    -fx-background-color: #374151;
+}
+
+.theme_dark .selector_button {
+    -fx-background-color: #333333;
+    -fx-text-fill: #f5f5f5;
+    -fx-border-color: #4b5563;
+}
+
+.theme_dark .icon_button {
+    -fx-background-color: #333333;
+    -fx-text-fill: #f5f5f5;
+    -fx-border-color: #4b5563;
+}
+
+.theme_dark .icon_button:hover {
+    -fx-background-color: #3d3d3d;
+    -fx-border-color: #60a5fa;
+}
+
+.theme_dark .selector_button:hover,
+.theme_dark .selector_button:showing {
+    -fx-background-color: #3d3d3d;
+    -fx-border-color: #60a5fa;
+}
+
+.theme_dark .selector_button .arrow {
+    -fx-background-color: #d1d5db;
+}
+
+.theme_dark .context-menu {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #3d3d3d;
+}
+
+.theme_dark .menu-item:focused {
+    -fx-background-color: #374151;
+}
+
+.theme_dark .menu-item .label,
+.theme_dark .menu-item:focused .label {
+    -fx-text-fill: #f5f5f5;
+}
