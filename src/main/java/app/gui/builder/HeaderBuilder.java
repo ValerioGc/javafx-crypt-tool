@@ -216,11 +216,14 @@ public final class HeaderBuilder {
     private void applyThemeColors(VBox root, boolean darkMode) {
         if (brandLogo != null)
             applyBrandLogoTheme(darkMode);
-        
+
         if (themeIcon != null)
             appUtils.applyInvertEffect(themeIcon, true);
-        
+
         for (Node icon : root.lookupAll(".form_icon"))
+            appUtils.applyInvertEffect(icon, darkMode);
+
+        for (Node icon : root.lookupAll(".icon_invert"))
             appUtils.applyInvertEffect(icon, darkMode);
     }
 
