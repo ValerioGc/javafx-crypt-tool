@@ -88,7 +88,9 @@ public class CustomButtonBuilder {
 
     public Button createCopyButton(TextInputControl resultField) {
         copyButton = new Button();
-        copyButton.setGraphic(appUtils.loadImage(AppAssets.COPY_ICON, COPY_ICON_SIZE, COPY_ICON_SIZE));
+        javafx.scene.image.ImageView copyIcon = appUtils.loadImage(AppAssets.COPY_ICON, COPY_ICON_SIZE, COPY_ICON_SIZE);
+        copyIcon.getStyleClass().add("icon_invert");
+        copyButton.setGraphic(copyIcon);
         copyButton.getStyleClass().add("icon_button");
         copyButton.setTooltip(new Tooltip(AppMessages.buttonCopyTooltip()));
 
