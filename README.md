@@ -36,6 +36,8 @@ Download the latest release from the [Releases page](https://github.com/ValerioG
 
 > No Java installation required — the runtime is bundled inside the package.
 
+> **Windows SmartScreen warning:** since the executable is not commercially signed, Windows may show a warning on first launch. Click **"More info" → "Run anyway"** to proceed. 
+
 ---
 
 ## 🚀 How To Use
