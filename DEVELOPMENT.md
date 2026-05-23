@@ -32,8 +32,8 @@ Set `JAVA_HOME` to the Liberica Full JDK installation before building or running
 ## Build
 
 ```bash
-git clone https://github.com/ValerioGc/java-crypt-tool.git
-cd java-crypt-tool
+git clone https://github.com/ValerioGc/javafx-crypt-tool.git
+cd javafx-crypt-tool
 mvn clean package
 java -jar target/EncSeal-1.0.0.jar
 ```

@@ -9,7 +9,7 @@
   <version>1.0.0</version>
   <name>javafx-crypt-tool</name>
   <description>Simple encryption and decryption tool using JavaFX and Bouncy Castle</description>
-  <url>https://github.com/ValerioGc/java-crypt-tool.git</url>
+  <url>https://github.com/ValerioGc/javafx-crypt-tool.git</url>
 
   <developers>
     <developer>
@@ -18,9 +18,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/ValerioGc/java-crypt-tool.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:ValerioGc/java-crypt-tool.git</developerConnection>
-    <url>https://github.com/ValerioGc/java-crypt-tool.git</url>
+    <connection>scm:git:https://github.com/ValerioGc/javafx-crypt-tool.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:ValerioGc/javafx-crypt-tool.git</developerConnection>
+    <url>https://github.com/ValerioGc/javafx-crypt-tool.git</url>
   </scm>
 
   <properties>

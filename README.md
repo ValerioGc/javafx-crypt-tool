@@ -27,7 +27,7 @@
 
 ## ⬇️ Download
 
-Download the latest release from the [Releases page](https://github.com/ValerioGc/java-crypt-tool/releases):
+Download the latest release from the [Releases page](https://github.com/ValerioGc/javafx-crypt-tool/releases):
 
 | Platform | File | How to run |
 |---|---|---|
